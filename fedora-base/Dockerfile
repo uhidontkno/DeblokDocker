@@ -3,6 +3,8 @@ FROM fedora:latest
 ENV USER=root
 WORKDIR /app
 
+COPY . .
+
 RUN dnf -y update && dnf install -y \
     python3 \
     python3-pip \
