@@ -11,7 +11,8 @@ RUN apt-get update && apt-get install -y \
     npm \
     git \
     procps \
-    python3-numpy
+    python3-numpy \
+    neofetch
 RUN mkdir -p /root/.vnc
 RUN touch /root/.vnc/passwd
 RUN echo 12345678 | vncpasswd -f > /root/.vnc/passwd

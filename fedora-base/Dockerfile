@@ -12,7 +12,8 @@ RUN dnf -y update && dnf install -y \
     npm \
     git \
     procps-ng \
-    numpy
+    numpy \
+    neofetch
 
 RUN mkdir -p /root/.vnc
 RUN touch /root/.vnc/passwd
