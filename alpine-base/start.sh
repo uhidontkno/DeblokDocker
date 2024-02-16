@@ -1,4 +1,4 @@
 #!/bin/bash
 # Start the VNC server
-vncserver :1 -geometry 640x480 -depth 24 &
+x11vnc :1 -forever -usepw &
 /app/noVNC/utils/novnc_proxy --vnc localhost:5901
