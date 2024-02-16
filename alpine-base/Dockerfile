@@ -10,13 +10,13 @@ RUN apk update && \
     python3 \
     py3-pip \
     xterm \
-    tigervnc-server \
+    x11vnc \
     nodejs \
     npm \
     git \
     procps \
     neofetch \
-    numpy
+#   numpy
 
 RUN mkdir -p /root/.vnc
 RUN touch /root/.vnc/passwd
