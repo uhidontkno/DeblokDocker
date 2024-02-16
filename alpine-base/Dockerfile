@@ -15,8 +15,7 @@ RUN apk update && \
     npm \
     git \
     procps \
-    neofetch \
-#   numpy
+    neofetch 
 
 RUN mkdir -p /root/.vnc
 RUN touch /root/.vnc/passwd
