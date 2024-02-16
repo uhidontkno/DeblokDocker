@@ -10,7 +10,7 @@ RUN pacman -Syu --noconfirm && \
     python \
     python-pip \
     xterm \
-    tigervnc \
+    tightvnc \
     nodejs \
     npm \
     git \
