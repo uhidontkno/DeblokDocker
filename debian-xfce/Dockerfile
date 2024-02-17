@@ -9,7 +9,7 @@ ENV DISPLAY=:1
 WORKDIR /app
 COPY . .
 RUN apt-get update && apt-get install -y \
-    dbus dbus-x11 libxrandr2 libxext-dev libxrender-dev libxtst-dev \
+    passwd sudo dbus dbus-x11 libxrandr2 libxext-dev libxrender-dev libxtst-dev \
     python3 \
     python3-pip \
     xterm \
@@ -27,6 +27,12 @@ RUN mkdir /home/deblok
 RUN chown deblok /home/deblok
 RUN chmod 777 /home/deblok
 RUN chmod 777 /app
+
+# Remove passwords
+RUN echo 'root:' | chpasswd -e
+RUN echo 'deblok:' | chpasswd -e
+
+
 USER deblok
 
 RUN mkdir -p /home/deblok/.vnc
