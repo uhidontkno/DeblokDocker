@@ -10,7 +10,6 @@ if [ -z "$1" ]; then
     echo "Building all images..."
     sudo docker build -t deblok-debian-base:latest ./debian-base
     sudo docker build -t deblok-ubuntu-base:latest ./ubuntu-base
-    sudo docker build -t deblok-arch-base:latest ./arch-base
     sudo docker build -t deblok-fedora-base:latest ./fedora-base
     sudo docker build -t deblok-alpine-base:latest ./alpine-base
 else
