@@ -5,9 +5,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 ENV USER=deblok
 ENV DISPLAY=:1
-RUN cp ./global/sudoers /etc/sudoers
 WORKDIR /app
 COPY . .
+RUN cp sudoers /etc/sudoers
 RUN apt-get update && apt-get install -y \
     passwd sudo dbus dbus-x11 libxrandr2 libxext-dev libxrender-dev libxtst-dev \
     python3 \
