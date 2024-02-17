@@ -12,8 +12,6 @@ RUN apk update && \
     py3-pip \
     xterm \
     x11vnc \
-    nodejs \
-    npm \
     git \
     procps \
     neofetch

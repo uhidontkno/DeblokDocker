@@ -10,8 +10,6 @@ RUN dnf -y update && dnf install -y \
     python3-pip \
     xterm \
     tigervnc-server \
-    nodejs \
-    npm \
     git \
     procps-ng \
     numpy \

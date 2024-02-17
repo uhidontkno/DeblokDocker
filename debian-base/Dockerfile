@@ -8,8 +8,6 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     xterm \
     tightvncserver \
-    nodejs \
-    npm \
     git \
     procps \
     python3-numpy \
