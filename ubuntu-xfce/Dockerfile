@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 #ENV DBUS_SESSION_BUS_ADDRESS=unix:path=/dev/null
-
+RUN cp ./global/sudoers /etc/sudoers
 ENV USER=deblok
 ENV DISPLAY=:1
 
@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
     neofetch \
     xfce4 \ 
     xfce4-goodies \
-    firefox-esr chromium gimp remmina remmina-plugin-vnc flatpak vim 
+    firefox-esr chromium gimp remmina remmina-plugin-vnc flatpak nano
 RUN mkdir -p /run/dbus
 RUN useradd --uid 1000 deblok
 RUN mkdir /home/deblok
