@@ -8,7 +8,7 @@ ENV DISPLAY=:1
 WORKDIR /app
 COPY . .
 RUN apt-get update && apt-get install -y \
-    dbus dbus-x11 \
+    dbus dbus-x11 libxrandr2 \
     python3 \
     python3-pip \
     xterm \
