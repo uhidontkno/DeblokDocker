@@ -13,15 +13,13 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     xterm \
     tightvncserver \
-    nodejs \
-    npm \
     git \
     procps \
     python3-numpy \
     neofetch \
     xfce4 \ 
     xfce4-goodies \
-    firefox-esr chromium gimp remmina remmina-plugin-vnc flatpak
+    firefox-esr chromium gimp remmina remmina-plugin-vnc flatpak vim 
 RUN mkdir -p /run/dbus
 RUN useradd --uid 1000 deblok
 RUN mkdir /home/deblok
