@@ -1,9 +1,14 @@
 FROM debian:11-slim
+ENV DEBIAN_FRONTEND=noninteractive
+#ENV DBUS_SESSION_BUS_ADDRESS=unix:path=/dev/null
+
 ENV USER=deblok
+ENV DISPLAY=:1
+
 WORKDIR /app
 COPY . .
-ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
+    dbus dbus-x11 \
     python3 \
     python3-pip \
     xterm \
@@ -15,10 +20,13 @@ RUN apt-get update && apt-get install -y \
     python3-numpy \
     neofetch \
     xfce4 \ 
-    xfce4-goodies
-
+    xfce4-goodies 
+RUN mkdir -p /run/dbus
 RUN useradd --uid 1000 deblok
 RUN mkdir /home/deblok
+RUN chown deblok /home/deblok
+RUN chmod 777 /home/deblok
+RUN chmod 777 /app
 USER deblok
 
 RUN mkdir -p /home/deblok/.vnc
