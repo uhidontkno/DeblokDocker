@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build ./debian-base deblok-debian-base:latest
+      run: docker build ./debian-base --tag deblok-debian-base:latest
