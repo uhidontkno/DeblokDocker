@@ -1,5 +1,4 @@
-FROM debian:11
-
+FROM ubuntu:latest
 ENV DEBIAN_FRONTEND=noninteractive
 #ENV DBUS_SESSION_BUS_ADDRESS=unix:path=/dev/null
 

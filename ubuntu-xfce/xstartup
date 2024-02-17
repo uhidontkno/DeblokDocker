@@ -1,0 +1,3 @@
+xrdb $HOME/.Xresources
+export DISPLAY=":1"
+startxfce4 &
