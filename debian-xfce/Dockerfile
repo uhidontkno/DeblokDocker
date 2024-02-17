@@ -8,7 +8,7 @@ ENV DISPLAY=:1
 WORKDIR /app
 COPY . .
 RUN apt-get update && apt-get install -y \
-    dbus dbus-x11 libxrandr2 \
+    dbus dbus-x11 libxrandr2 libxext-dev libxrender-dev libxtst-dev \
     python3 \
     python3-pip \
     xterm \
@@ -20,7 +20,8 @@ RUN apt-get update && apt-get install -y \
     python3-numpy \
     neofetch \
     xfce4 \ 
-    xfce4-goodies 
+    xfce4-goodies \
+    firefox-esr chromium gimp remmina remmina-plugin-vnc flatpak
 RUN mkdir -p /run/dbus
 RUN useradd --uid 1000 deblok
 RUN mkdir /home/deblok
