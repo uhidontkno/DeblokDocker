@@ -13,3 +13,6 @@ I find that using `build.sh` makes this process easier because of less typing ne
 ```bash
 sudo docker run -p [port]:6080 deblok-[image]
 ```
+
+## Pre-built packages:
+GitHub Actions automatically builds all base images every commit, and they are attached to this repo. Our manually built packages are not attached to this repo and you'll have to look at Deblok-Workshop's Packages tab to see them.
