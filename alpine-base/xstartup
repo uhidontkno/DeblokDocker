@@ -1,3 +1,4 @@
 #!/bin/bash
+kwin --replace &
 xrdb $HOME/.Xresources
 xterm &

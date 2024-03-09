@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     git \
     procps \
     python3-numpy \
-    neofetch
+    neofetch kwin-x11
 RUN mkdir -p /root/.vnc
 RUN touch /root/.vnc/passwd
 RUN echo 12345678 | vncpasswd -f > /root/.vnc/passwd

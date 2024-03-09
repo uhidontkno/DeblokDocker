@@ -1,4 +1,3 @@
 #!/bin/bash
-kwin_x11 --replace &
 xrdb $HOME/.Xresources
-xterm &
+firefox --no-sandbox &

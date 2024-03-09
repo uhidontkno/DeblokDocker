@@ -13,7 +13,7 @@ RUN dnf -y update && dnf install -y \
     git \
     procps-ng \
     numpy \
-    neofetch
+    neofetch kwin-x11
 
 RUN mkdir -p /root/.vnc
 RUN touch /root/.vnc/passwd
