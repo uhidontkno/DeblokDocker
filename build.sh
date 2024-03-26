@@ -7,7 +7,7 @@ if [ "$1" == "--help" ] || [ "$1" == "-?" ] || [ "$1" == "-h" ]; then
 fi
 
 if [ -z "$1" ]; then
-    echo "Building all images..."
+    echo "Building all base images..."
     sudo docker build -t deblok-debian-base:latest ./debian-base
     sudo docker build -t deblok-ubuntu-base:latest ./ubuntu-base
     sudo docker build -t deblok-fedora-base:latest ./fedora-base
