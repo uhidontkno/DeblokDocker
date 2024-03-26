@@ -2,7 +2,7 @@
 
 if [ "$1" == "--help" ] || [ "$1" == "-?" ] || [ "$1" == "-h" ]; then
     echo "Usage: $0 [image]"
-    echo "If no image is provided, it will build all images."
+    echo "If no image is provided, it will build all base images."
     exit 0
 fi
 
