@@ -2,4 +2,4 @@
 kwin_x11 --replace &
 sleep 1
 xrdb $HOME/.Xresources
-xterm &
+xfce4-terminal &

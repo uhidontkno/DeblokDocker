@@ -8,7 +8,7 @@ COPY . .
 RUN dnf -y update && dnf install -y \
     python3 \
     python3-pip \
-    xterm \
+    xfce4-terminal \
     tigervnc-server \
     git \
     procps-ng \

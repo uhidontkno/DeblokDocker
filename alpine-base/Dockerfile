@@ -10,7 +10,7 @@ RUN apk update && \
     xorg-server xf86-input-libinput xinit eudev xvfb \
     python3 \
     py3-pip \
-    xterm \
+    xfce4-terminal \
     x11vnc \
     git \
     procps \
