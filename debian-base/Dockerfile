@@ -1,5 +1,8 @@
 FROM debian:11-slim
 ENV USER=root
+RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
+    --mount=target=/var/cache/apt,type=cache,sharing=locked \
+    rm -f /etc/apt/apt.conf.d/docker-clean 
 WORKDIR /app
 COPY . .
 ENV DEBIAN_FRONTEND=noninteractive
