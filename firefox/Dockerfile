@@ -1,25 +1,8 @@
-FROM debian:11-slim
+FROM ghcr.io/deblok-workshop/deblokdocker/debian-base:latest
 ENV USER=root
 WORKDIR /app
 COPY . .
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y \
-    python3 \
-    python3-pip \
-    xterm \
-    tightvncserver \
-    git \
-    procps \
-    python3-numpy \
-    neofetch \
-    firefox-esr kwin-x11 wmctrl xdotool 
-RUN mkdir -p /root/.vnc
-RUN touch /root/.vnc/passwd
-RUN echo 12345678 | vncpasswd -f > /root/.vnc/passwd
-RUN chmod 600 /root/.vnc/passwd
-RUN touch /root/.Xresources
-RUN cp ./xstartup /root/.vnc/xstartup
-RUN chmod +x /root/.vnc/xstartup
-RUN git clone https://github.com/novnc/noVNC
+RUN apt-get -y install firefox-esr
 CMD ["bash", "start.sh"]
 EXPOSE 5901 6080
