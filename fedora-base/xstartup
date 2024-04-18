@@ -7,6 +7,6 @@ sleep 1
 xrdb $HOME/.Xresources
 echo "while :
 do
-xfce4-terminal &
+xfce4-terminal
 done
 " | bash & 
