@@ -1,5 +1,12 @@
 #!/bin/bash
-kwin_x11 --replace &
+echo "while :
+do
+kwin_x11 --replace
+done" | bash
 sleep 1
 xrdb $HOME/.Xresources
+echo "while :
+do
 xfce4-terminal &
+done
+" | bash
