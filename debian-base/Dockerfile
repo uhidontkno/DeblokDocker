@@ -7,7 +7,7 @@ WORKDIR /app
 COPY . .
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install --no-install-recommends -y \
-    python3 \
+    python3 xfonts-75dpi \
     python3-pip \
     xfce4-terminal \
     tightvncserver \
