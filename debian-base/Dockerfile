@@ -6,7 +6,7 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
 WORKDIR /app
 COPY . .
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install --no-install-recommends -y \
     python3 \
     python3-pip \
     xfce4-terminal \
