@@ -1,12 +1,10 @@
 #!/bin/bash
-echo "while :
-do
-kwin_x11
-done" | bash &
+openbox-session &
 sleep 1
-xrdb $HOME/.Xresources
+nitrogen ./blank.png
+sleep 1
 echo "while :
 do
-xfce4-terminal
+xfce4-terminal > /dev/null
 done
 " | bash &

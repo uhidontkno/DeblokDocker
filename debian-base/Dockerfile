@@ -6,19 +6,20 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
 WORKDIR /app
 COPY . .
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install --no-install-recommends -y \
-    python3 xfonts-75dpi \
+RUN apt update && apt install --no-install-recommends -y \
+    fontconfig python3 xfonts-base curl \
     python3-pip \
     xfce4-terminal \
-    tightvncserver \
+    x11vnc \
     git \
     procps \
     python3-numpy \
-    neofetch kwin-x11
+    neofetch 
+RUN apt install -y x11-xserver-utils openbox obconf nitrogen xvfb
+RUN echo "iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABHNCSVQICAgIfAhkiAAAABVJREFUCJljdHBw+M+ABJgY0ABhAQBylAHH4MiYyQAAAABJRU5ErkJggg==" | base64 -d > blank.png
+RUN fc-cache -f -v
 RUN mkdir -p /root/.vnc
 RUN touch /root/.vnc/passwd
-RUN echo 12345678 | vncpasswd -f > /root/.vnc/passwd
-RUN chmod 600 /root/.vnc/passwd
 RUN touch /root/.Xresources
 RUN cp ./xstartup /root/.vnc/xstartup
 RUN chmod +x /root/.vnc/xstartup

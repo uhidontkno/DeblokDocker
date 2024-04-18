@@ -1,4 +1,7 @@
 #!/bin/bash
-vncserver :1 -geometry 1280x720 -depth 24 &
-xsetroot -bg black -fg white
-/app/noVNC/utils/novnc_proxy --vnc localhost:5901
+Xvfb :1 +extension RANDR -screen 1280x720x16 &
+export DISPLAY=:1
+bash ./xstartup &
+sleep 1
+x11vnc -display :1 -nopw &
+/app/noVNC/utils/novnc_proxy --vnc localhost:5900
