@@ -1,4 +1,10 @@
 #!/bin/bash
-kwin_x11 --replace &
-xrdb $HOME/.Xresources
-firefox --no-sandbox &
+echo "openbox-session &" | bash
+#sleep 1
+#nitrogen ./blank.png
+sleep 1
+echo "while :
+do
+firefox --no-sandbox
+done
+" | bash 
