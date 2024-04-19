@@ -23,7 +23,6 @@ RUN touch /root/.vnc/passwd
 RUN echo 12345678 | vncpasswd -f > /root/.vnc/passwd
 RUN touch /root/.Xresources
 RUN cp ./xstartup /root/.vnc/xstartup
-RUN cp ./debian-menu.xml /var/lib/openbox/debian-menu.xml
 RUN chmod +x /root/.vnc/xstartup
 RUN git clone https://github.com/novnc/noVNC
 CMD ["bash", "start.sh"]
