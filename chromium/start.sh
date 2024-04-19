@@ -1,5 +1,6 @@
 #!/bin/bash
 vncserver :1 -passwd /root/.vnc/passwd &
+export DISPLAY=:1
 sleep 1
 /app/noVNC/utils/novnc_proxy --vnc localhost:5901 &
 sleep 3

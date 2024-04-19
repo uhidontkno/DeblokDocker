@@ -3,7 +3,7 @@ ENV USER=root
 WORKDIR /app
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get -y install firefox-esr
+RUN apt-get -y install firefox-esr menu
 COPY ./ /app
 RUN cp ./xstartup /root/.vnc/xstartup
 CMD ["bash", "start.sh"]
