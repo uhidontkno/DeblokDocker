@@ -1,6 +1,6 @@
 # DeblokDocker
 Docker images for NewDeblok. 
-* Base images include just Xorg WM and xterm, nothing special.
+* Base images include Openbox DE and xfce4-terminal, nothing special.
 
 ## Building
 I find that using `build.sh` makes this process easier because of less typing needed:
