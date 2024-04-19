@@ -1,6 +1,11 @@
 #!/bin/bash
-vncserver :1 -passwd /root/.vnc/passwd &
 export DISPLAY=:1
+echo "while :
+do
+vncserver :1 -passwd /root/.vnc/passwd
+sleep 5
+done
+" | bash &
 sleep 1
 /app/noVNC/utils/novnc_proxy --vnc localhost:5901 &
 sleep 3
