@@ -1,10 +1,10 @@
 #!/bin/bash
-openbox-session &
-sleep 1
-nitrogen ./blank.png
+echo "openbox-session &" | bash
+#sleep 1
+#nitrogen ./blank.png
 sleep 1
 echo "while :
 do
 xfce4-terminal > /dev/null
 done
-" | bash &
+" | bash 

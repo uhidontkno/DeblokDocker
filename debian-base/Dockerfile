@@ -10,18 +10,20 @@ RUN apt update && apt install --no-install-recommends -y \
     fontconfig python3 xfonts-base curl \
     python3-pip \
     xfce4-terminal \
-    x11vnc \
+    tigervnc-tools tigervnc-standalone-server tigervnc-common \
     git \
     procps \
-    python3-numpy \
+    python3-numpy python3-xdg \
     neofetch 
 RUN apt install -y x11-xserver-utils openbox obconf nitrogen xvfb
 RUN echo "iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABHNCSVQICAgIfAhkiAAAABVJREFUCJljdHBw+M+ABJgY0ABhAQBylAHH4MiYyQAAAABJRU5ErkJggg==" | base64 -d > blank.png
 RUN fc-cache -f -v
 RUN mkdir -p /root/.vnc
 RUN touch /root/.vnc/passwd
+RUN echo 12345678 | vncpasswd -f > /root/.vnc/passwd
 RUN touch /root/.Xresources
 RUN cp ./xstartup /root/.vnc/xstartup
+RUN cp ./debian-menu.xml /var/lib/openbox/debian-menu.xml
 RUN chmod +x /root/.vnc/xstartup
 RUN git clone https://github.com/novnc/noVNC
 CMD ["bash", "start.sh"]
