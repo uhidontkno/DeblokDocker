@@ -7,7 +7,7 @@ ENV USER=deblok
 ENV DISPLAY=:1
 WORKDIR /app
 COPY . .
-RUN apt-get update && apt-get install --no-install-recommends -y xfonts-75dpi xvfb passwd sudo dbus dbus-x11 libxrandr2 libxext-dev libxrender-dev libxtst-dev python3 python3-pip xterm git procps python3-numpy neofetch xfce4 xfce4-goodies firefox-esr chromium-bsu gimp remmina remmina-plugin-vnc flatpak nano
+RUN apt-get update && apt-get install --no-install-recommends -y xfonts-75dpi xvfb passwd sudo dbus dbus-x11 libxrandr2 libxext-dev libxrender-dev libxtst-dev python3 python3-pip xterm git procps python3-numpy neofetch xfce4 xfce4-goodies firefox chromium-browser gimp remmina remmina-plugin-vnc flatpak nano
 RUN apt-get install -y tigervnc-tools tigervnc-standalone-server tigervnc-common
 RUN mkdir -p /run/dbus
 RUN useradd --uid 1000 deblok
