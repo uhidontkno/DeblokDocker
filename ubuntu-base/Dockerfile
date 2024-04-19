@@ -15,7 +15,7 @@ RUN apt update && apt install --no-install-recommends -y \
     procps \
     python3-numpy python3-xdg \
     neofetch 
-RUN apt install -y x11-xserver-utils openbox obconf obmenu nitrogen xvfb menu
+RUN apt install -y x11-xserver-utils openbox obconf nitrogen xvfb menu
 RUN echo "iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABHNCSVQICAgIfAhkiAAAABVJREFUCJljdHBw+M+ABJgY0ABhAQBylAHH4MiYyQAAAABJRU5ErkJggg==" | base64 -d > blank.png
 RUN fc-cache -f -v
 RUN mkdir -p /root/.vnc
