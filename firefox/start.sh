@@ -4,12 +4,12 @@ echo "while :
 do
 vncserver -kill :1
 vncserver :1 -fg -passwd /root/.vnc/passwd
-sleep 5
+sleep 2
 done
 " | bash &
 sleep 1
 /app/noVNC/utils/novnc_proxy --vnc localhost:5901 &
-sleep 3
+sleep 1
 echo "openbox-session &" | bash
 #sleep 1
 #nitrogen ./blank.png
