@@ -10,7 +10,7 @@ done
 sleep 1
 /app/noVNC/utils/novnc_proxy --vnc localhost:5901 &
 sleep 1
-echo "openbox-session &" | bash
+
 #sleep 1
 #nitrogen ./blank.png
 sleep 1
