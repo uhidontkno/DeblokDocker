@@ -2,7 +2,7 @@
 export DISPLAY=:1
 echo "while :
 do
-vncserver :1 -passwd /root/.vnc/passwd
+vncserver :1 -fg -passwd /root/.vnc/passwd
 sleep 5
 done
 " | bash &
