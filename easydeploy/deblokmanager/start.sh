@@ -23,14 +23,14 @@ BWHITE='\033[1;37m'       # WHITE
 
 printf "$OFF$BLUE info:$OFF$BBLUE Starting dockerd...$OFF\n"
 echo "" > docker.log # Clear old log if it exists
-dockerd > docker.log & 
+echo "dockerd > docker.log 2> docker.log" | bash &
 sleep 3
 printf "$OFF$BLUE info:$OFF$BBLUE Pulling containers...$OFF\n"
 printf "$OFF$BLUE info:$OFF$BBLUE This will only take long on first start or if there is any updates.$OFF\n"
 bash pull.sh
 sleep 1
 printf "$OFF$BLUE info:$OFF$BBLUE Starting NGINX...$OFF\n"
-service start nginx
+echo "nginx > nginx.log 2> nginx.log" | bash &
 sleep 1
 printf "$OFF$BLUE info:$OFF$BBLUE Starting DeblokManager...$OFF\n"
 cd DeblokManager
