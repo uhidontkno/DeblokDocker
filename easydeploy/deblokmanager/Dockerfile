@@ -32,4 +32,5 @@ RUN apt-get update && \
 RUN cp DeblokManager/nginx/nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 3175 8100 8000
+
 CMD ["bash","start.sh"]
