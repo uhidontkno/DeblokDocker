@@ -26,10 +26,16 @@ echo '{ "hosts": ["tcp://0.0.0.0:2375","unix:///var/run/docker.sock"] }' > /etc/
 
 echo "" > docker.log # Clear old log if it exists
 echo "dockerd > docker.log 2> docker.log" | bash &
-sleep 3
+sleep 10
+if [ "$1" == "--debug" ]; then
+    cat docker.log
+fi
 printf "$OFF$BLUE info:$OFF$BBLUE Pulling containers...$OFF\n"
 printf "$OFF$BLUE info:$OFF$BBLUE This will only take long on first start or if there is any updates.$OFF\n"
 bash pull.sh --pull-some
+if [ "$1" == "--debug" ]; then
+    cat dockerpulls.log
+fi
 sleep 1
 printf "$OFF$BLUE info:$OFF$BBLUE Starting NGINX...$OFF\n"
 echo "nginx > nginx.log 2> nginx.log" | bash &

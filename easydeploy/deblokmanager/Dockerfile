@@ -5,6 +5,7 @@ RUN mkdir /app
 WORKDIR /app
 COPY ./ /app
 
+
 # Install packages
 RUN apt-get update && \
     apt-get install -y \
@@ -14,7 +15,11 @@ RUN apt-get update && \
         gnupg-agent \
         software-properties-common \
         nginx \
-        git nodejs
+        git cmake
+# Install NodeJS PPA repo
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash 
+# Install NodeJS
+RUN apt update && apt install -y nodejs
 
 # Clone the repo
 RUN git clone https://github.com/Deblok-Workshop/DeblokManager
