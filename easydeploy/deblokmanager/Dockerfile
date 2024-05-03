@@ -14,7 +14,7 @@ RUN apt-get update && \
         gnupg-agent \
         software-properties-common \
         nginx \
-        git
+        git nodejs
 
 # Clone the repo
 RUN git clone https://github.com/Deblok-Workshop/DeblokManager

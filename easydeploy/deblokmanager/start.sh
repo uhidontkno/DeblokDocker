@@ -34,4 +34,6 @@ echo "nginx > nginx.log 2> nginx.log" | bash &
 sleep 1
 printf "$OFF$BLUE info:$OFF$BBLUE Starting DeblokManager...$OFF\n"
 cd DeblokManager
+bun i
+bun i cpu-features
 bun run index.ts
