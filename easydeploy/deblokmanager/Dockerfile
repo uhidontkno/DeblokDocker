@@ -1,5 +1,5 @@
 # We're using Bun Debian container so we don't have to manually install Bun.
-FROM oven/bun:debian
+FROM oven/bun:1.1.3-debian
 USER root
 RUN mkdir /app
 WORKDIR /app
