@@ -22,12 +22,12 @@ BCYAN='\033[1;36m'        # CYAN
 BWHITE='\033[1;37m'       # WHITE
 
 printf "$OFF$BLUE info:$OFF$BBLUE Starting dockerd...$OFF\n"
-# echo '{ "hosts": ["tcp://0.0.0.0:2375","unix:///var/run/docker.sock"] }' > /etc/docker/daemon.json
+echo '{ "hosts": ["tcp://0.0.0.0:2375","unix:///var/run/docker.sock"] }' > /etc/docker/daemon.json
 
 echo "" > docker.log 
-rm /var/run/docker.pid
-echo "dockerd --iptables=false --host=tcp://0.0.0.0:2375 --host=unix:///var/run/docker.sock > docker.log 2> docker.log" | bash &
-sleep 6
+rm /var/run/docker.pid > docker.log 2> docker.log
+echo "dockerd > docker.log 2> docker.log" | bash &
+sleep 4
 if [ "$1" == "--debug" ]; then
     cat docker.log
 fi
