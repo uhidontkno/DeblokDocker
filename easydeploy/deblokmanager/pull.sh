@@ -26,23 +26,23 @@ if [ "$1" == "--pull-some" ]; then
     printf "$OFF$GREEN pull:$OFF$BGREEN skipping xfce and single app containers$OFF\n"
 fi
 printf "$OFF$GREEN pull:$OFF$BGREEN pulling alpine-base...$OFF\n"
-docker pull ghcr.io/deblok-workshop/deblokdocker/alpine-base:latest > /dev/null 2> /dev/null
+docker pull ghcr.io/deblok-workshop/deblokdocker/alpine-base:latest > dockerpulls.log 2> dockerpulls.log
 
 printf "$OFF$GREEN pull:$OFF$BGREEN pulling debian-base...$OFF\n"
-docker pull ghcr.io/deblok-workshop/deblokdocker/debian-base:latest > /dev/null 2> /dev/null
+docker pull ghcr.io/deblok-workshop/deblokdocker/debian-base:latest > dockerpulls.log 2> dockerpulls.log
 
 printf "$OFF$GREEN pull:$OFF$BGREEN pulling fedora-base...$OFF\n"
-docker pull ghcr.io/deblok-workshop/deblokdocker/fedora-base:latest > /dev/null 2> /dev/null
+docker pull ghcr.io/deblok-workshop/deblokdocker/fedora-base:latest > dockerpulls.log 2> dockerpulls.log
 
 printf "$OFF$GREEN pull:$OFF$BGREEN pulling ubuntu-base...$OFF\n"
-docker pull ghcr.io/deblok-workshop/deblokdocker/ubuntu-base:latest > /dev/null 2> /dev/null 
+docker pull ghcr.io/deblok-workshop/deblokdocker/ubuntu-base:latest > dockerpulls.log 2> dockerpulls.log 
 
 if [ "$1" != "--pull-some" ]; then
     printf "$OFF$GREEN pull:$OFF$BGREEN pulling xfce containers...$OFF\n"
-    docker pull ghcr.io/deblok-workshop/deblokdocker/debian-xfce:latest > /dev/null 2> /dev/null
-    docker pull ghcr.io/deblok-workshop/deblokdocker/ubuntu-xfce:latest > /dev/null 2> /dev/null
+    docker pull ghcr.io/deblok-workshop/deblokdocker/debian-xfce:latest > dockerpulls.log 2> dockerpulls.log
+    docker pull ghcr.io/deblok-workshop/deblokdocker/ubuntu-xfce:latest > dockerpulls.log 2> dockerpulls.log
 
     printf "$OFF$GREEN pull:$OFF$BGREEN pulling single app containers...$OFF\n"
-    docker pull ghcr.io/deblok-workshop/deblokdocker/chromium:latest  > /dev/null 2> /dev/null
-    docker pull ghcr.io/deblok-workshop/deblokdocker/firefox:latest > /dev/null 2> /dev/null
+    docker pull ghcr.io/deblok-workshop/deblokdocker/chromium:latest  > dockerpulls.log 2> dockerpulls.log
+    docker pull ghcr.io/deblok-workshop/deblokdocker/firefox:latest > dockerpulls.log 2> dockerpulls.log
 fi

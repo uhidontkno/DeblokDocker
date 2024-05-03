@@ -25,7 +25,7 @@ printf "$OFF$BLUE info:$OFF$BBLUE Starting dockerd...$OFF\n"
 echo '{ "hosts": ["tcp://0.0.0.0:2375","unix:///var/run/docker.sock"] }' > /etc/docker/daemon.json
 
 echo "" > docker.log # Clear old log if it exists
-echo "dockerd --host=tcp://0.0.0.0:2375 --host=unix:///var/run/docker.sock > docker.log 2> docker.log" | bash &
+echo "dockerd > docker.log 2> docker.log" | bash &
 sleep 3
 printf "$OFF$BLUE info:$OFF$BBLUE Pulling containers...$OFF\n"
 printf "$OFF$BLUE info:$OFF$BBLUE This will only take long on first start or if there is any updates.$OFF\n"
