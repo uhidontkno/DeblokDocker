@@ -15,7 +15,7 @@ RUN apt-get update && \
         gnupg-agent \
         software-properties-common \
         nginx \
-        git cmake
+        git cmake build-essential g++
 # Install NodeJS PPA repo
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash 
 # Install NodeJS
