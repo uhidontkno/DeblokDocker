@@ -1,5 +1,4 @@
-# We're using Bun Debian container so we don't have to manually install Bun.
-FROM oven/bun:1.1.3-debian
+FROM debian:12
 USER root
 RUN mkdir /app
 WORKDIR /app
@@ -16,6 +15,8 @@ RUN apt-get update && \
         software-properties-common \
         nginx \
         git cmake build-essential g++
+# Install Bun
+RUN curl https://bun.sh/install | bash
 # Install NodeJS PPA repo
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash 
 # Install NodeJS
