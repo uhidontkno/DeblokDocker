@@ -14,7 +14,7 @@ RUN apt-get update && \
         gnupg-agent \
         software-properties-common \
         nginx \
-        git cmake build-essential g++
+        git cmake build-essential g++ unzip zip
 # Install Bun
 RUN curl https://bun.sh/install | bash
 # Install NodeJS PPA repo
