@@ -26,7 +26,7 @@ echo '{ "hosts": ["tcp://0.0.0.0:2375","unix:///var/run/docker.sock"] }' > /etc/
 
 echo "" > docker.log 
 rm /var/run/docker.pid > docker.log 2> docker.log
-dockerd &
+dockerd --tls=false &
 sleep 8
 if [ "$1" == "--debug" ]; then
     cat docker.log
@@ -43,6 +43,6 @@ echo "nginx > nginx.log 2> nginx.log" | bash &
 sleep 1
 printf "$OFF$BLUE info:$OFF$BBLUE Starting DeblokManager...$OFF\n"
 cd DeblokManager
-/root/.bun/bin/bun i ssh2
 /root/.bun/bin/bun i
+/root/.bun/bin/bun rm cpu-features
 /root/.bun/bin/bun run index.ts 

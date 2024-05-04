@@ -31,8 +31,8 @@ docker pull ghcr.io/deblok-workshop/deblokdocker/alpine-base:latest > dockerpull
 printf "$OFF$GREEN pull:$OFF$BGREEN pulling debian-base...$OFF\n"
 docker pull ghcr.io/deblok-workshop/deblokdocker/debian-base:latest > dockerpulls.log 2> dockerpulls.log
 
-printf "$OFF$GREEN pull:$OFF$BGREEN pulling fedora-base...$OFF\n"
-docker pull ghcr.io/deblok-workshop/deblokdocker/fedora-base:latest > dockerpulls.log 2> dockerpulls.log
+#printf "$OFF$GREEN pull:$OFF$BGREEN pulling fedora-base...$OFF\n"
+#docker pull ghcr.io/deblok-workshop/deblokdocker/fedora-base:latest > dockerpulls.log 2> dockerpulls.log
 
 printf "$OFF$GREEN pull:$OFF$BGREEN pulling ubuntu-base...$OFF\n"
 docker pull ghcr.io/deblok-workshop/deblokdocker/ubuntu-base:latest > dockerpulls.log 2> dockerpulls.log 
