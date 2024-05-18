@@ -9,8 +9,6 @@ done
 sleep 1
 /app/noVNC/utils/novnc_proxy --vnc localhost:5901 &
 sleep 1
-#sleep 1
-#nitrogen ./blank.png
 # Uncomment the below to relaunch on close
 #echo "while :
 #do
